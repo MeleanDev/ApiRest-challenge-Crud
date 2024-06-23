@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\EstudianteClass;
 use App\Http\Requests\EstudiantesRequest;
 use App\Models\Estudiantes;
+use Illuminate\Http\Request;
 
 class EstudiantesController extends Controller
 {
@@ -57,6 +58,12 @@ class EstudiantesController extends Controller
         } catch (\Throwable $th) {
             return response()->json(['message' => 'Error!!'], 404);
         }
+    }
+
+    public function reset(Request $dato){
+        $eliminacion = $this->EstudianteClass->resetTabla($dato->baja);
+        if ($eliminacion == true) return response()->json(['message' => 'Todos los registros eliminado'], 200);
+        return response()->json(['message' => 'Registros no eliminado'], 400);
     }
 
 }
