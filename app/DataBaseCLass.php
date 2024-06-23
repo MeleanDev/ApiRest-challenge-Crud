@@ -64,10 +64,10 @@ class DataBaseCLass
             $id->save();
         }
 
-        // // Eliminar
-        // public function materiaEliminar($id){
-        //     $id->delete();
-        // }
+        // Eliminar
+        public function materiaEliminar($id){
+            $id->delete();
+        }
 
         // // Truncate
         // public function materiaReset(){

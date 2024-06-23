@@ -24,9 +24,9 @@ class MateriaClass
         $this->dataBaseCLass->materiaEditar($datos, $id);
     }
 
-    // public function eliminar($id){
-    //     $this->dataBaseCLass->materiaEliminar($id);
-    // }
+    public function eliminar($id){
+        $this->dataBaseCLass->materiaEliminar($id);
+    }
 
     // public function resetTabla($datos){
     //     $eliminado = false;

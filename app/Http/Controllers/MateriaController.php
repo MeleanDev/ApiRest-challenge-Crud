@@ -50,14 +50,14 @@ class MateriaController extends Controller
         }
     }
 
-    // public function eliminar(Materia $id){
-    //     try {
-    //         $this->materiaClass->eliminar($id);
-    //         return response()->json(['message' => 'Eliminacion exitosa'], 200);
-    //     } catch (\Throwable $th) {
-    //         return response()->json(['message' => 'Error!!'], 404);
-    //     }
-    // }
+    public function eliminar(Materia $id){
+        try {
+            $this->materiaClass->eliminar($id);
+            return response()->json(['message' => 'Eliminacion exitosa'], 200);
+        } catch (\Throwable $th) {
+            return response()->json(['message' => 'Error!!'], 404);
+        }
+    }
 
     // public function reset(Request $dato){
     //     $eliminacion = $this->materiaClass->resetTabla($dato->baja);
