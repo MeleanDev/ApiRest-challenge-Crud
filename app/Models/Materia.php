@@ -14,10 +14,5 @@ class Materia extends Model
      *
      * @var array<string>
      */
-    protected $guarded = [''];
-
-    public function materias()
-    {
-        return $this->belongsToMany(Estudiantes::class, 'nota', 'estudiantes_id', 'materia_id')->withPivot('calificaciones');
-    }
+    protected $guarded = ['*'];
 }

@@ -31,7 +31,6 @@ class EstudiantesController extends Controller
         } catch (\Throwable $th) {
             return response()->json(['message' => 'Error en el registro'], 400);
         }
-        $this->EstudianteClass->crear($datos);
     }
 
     public function dato(Estudiantes $id){

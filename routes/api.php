@@ -27,10 +27,10 @@ Route::controller(MateriaController::class)->group(function () {
 
 // calificacion
 Route::controller(CalificacioneController::class)->group(function () {
-    Route::get('Calificacion', 'lista');
-    Route::post('Calificacion', 'crear');
-    Route::get('Calificacion/{id}', 'dato');
-    Route::put('Calificacion/{id}', 'editar');
-    Route::delete('Calificacion/{id}', 'eliminar');
-    Route::post('Calificacion/Resete', 'reset');
+    Route::get('Calificaciones', 'lista');
+    Route::post('Calificaciones', 'crear');
+    Route::get('Calificaciones/{id}', 'dato');
+    Route::put('Calificaciones/{id}', 'editar');
+    Route::delete('Calificaciones/{id}', 'eliminar');
+    Route::post('Calificaciones/Resete', 'reset');
 });

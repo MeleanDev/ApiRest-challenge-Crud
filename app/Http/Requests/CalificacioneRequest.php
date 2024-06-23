@@ -11,7 +11,7 @@ class CalificacioneRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,9 @@ class CalificacioneRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'materia_id' => ['required', 'string'],
+            'estudiantes_id' => ['required', 'string'],
+            'nota' => ['required', 'string']
         ];
     }
 }

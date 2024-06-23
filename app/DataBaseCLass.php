@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Models\Calificacione;
 use App\Models\Estudiantes;
 use App\Models\Materia;
 
@@ -53,9 +54,9 @@ class DataBaseCLass
 
         // Crear
         public function materiaCrear($datos){
-            $estud = new Materia();
-            $estud->nombre = $datos->nombre;
-            $estud->save();
+            $materia = new Materia();
+            $materia->nombre = $datos->nombre;
+            $materia->save();
         }
 
         // Editar
@@ -72,6 +73,40 @@ class DataBaseCLass
         // Truncate
         public function materiaReset(){
             Materia::truncate();
+        }
+    
+    // Calificaciones
+        // Lista
+        public function calificacioneLista(){
+            $datos = Calificacione::all();
+            return $datos;
+        }
+
+        // Crear
+        public function calificacioneCrear($datos){
+            $califi = new Calificacione();
+            $califi->materia_id = $datos->materia_id;
+            $califi->estudiantes_id = $datos->estudiantes_id;
+            $califi->nota = $datos->nota;
+            $califi->save();
+        }
+
+        // Editar
+        public function calificacioneEditar($datos ,$id){
+            $id->materia_id = $datos->materia_id;
+            $id->estudiantes_id = $datos->estudiantes_id;
+            $id->nota = $datos->nota;
+            $id->save();
+        }
+
+        // Eliminar
+        public function calificacioneEliminar($id){
+            $id->delete();
+        }
+
+        // Truncate
+        public function calificacioneReset(){
+            Calificacione::truncate();
         }
 
 

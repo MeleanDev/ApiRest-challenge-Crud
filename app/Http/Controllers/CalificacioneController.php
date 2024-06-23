@@ -2,64 +2,67 @@
 
 namespace App\Http\Controllers;
 
+use App\CalificacioneClass;
+use App\Http\Requests\CalificacioneRequest;
 use App\Models\Calificacione;
 use Illuminate\Http\Request;
 
 class CalificacioneController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+    private $calificacioneClass;
+
+    public function __construct(CalificacioneClass $calificacioneClass)
     {
-        //
+        $this->calificacioneClass = $calificacioneClass;
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+    public function lista(){
+        $datos = $this->calificacioneClass->lista(); // enviar nombre y del estudiante y materia
+        if ($datos->isEmpty()) {
+            return response()->json(['message' => 'No se encuentran registros'], 200);
+        }
+        return response()->json(['message' => $datos], 200);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
+    public function crear(CalificacioneRequest $datos){
+        try {
+            $this->calificacioneClass->crear($datos);
+            return response()->json(['message' => 'Registro exitoso'], 201);
+        } catch (\Throwable $th) {
+            return response()->json(['message' => 'Error en el registro'], 400);
+        }
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Calificacione $calificacione)
-    {
-        //
+    public function dato(Calificacione $id){
+        try {
+            $id = $this->calificacioneClass->dato($id);
+            return response()->json(['message' => $id], 200);
+        } catch (\Throwable $th) {
+            return response()->json(['message' => $id], 404);
+        }
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Calificacione $calificacione)
-    {
-        //
+    public function editar(CalificacioneRequest $datos, Calificacione $id){
+        try {
+            $this->calificacioneClass->editar($datos, $id);
+            return response()->json(['message' => 'Registro editado con exito'], 200);
+        } catch (\Throwable $th) {
+            return response()->json(['message' => 'Error!!'], 400);
+        }
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Calificacione $calificacione)
-    {
-        //
+    public function eliminar(Calificacione $id){
+        try {
+            $this->calificacioneClass->eliminar($id);
+            return response()->json(['message' => 'Eliminacion exitosa'], 200);
+        } catch (\Throwable $th) {
+            return response()->json(['message' => 'Error!!'], 404);
+        }
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Calificacione $calificacione)
-    {
-        //
+    public function reset(Request $dato){
+        $eliminacion = $this->calificacioneClass->resetTabla($dato->baja);
+        if ($eliminacion == true) return response()->json(['message' => 'Todos los registros eliminado'], 200);
+        return response()->json(['message' => 'Registros no eliminado'], 400);
     }
 }
