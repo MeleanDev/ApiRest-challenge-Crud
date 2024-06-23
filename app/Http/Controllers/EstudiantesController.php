@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\EstudianteClass;
 use App\Http\Requests\EstudiantesRequest;
+use App\Models\Estudiantes;
 
 class EstudiantesController extends Controller
 {
@@ -30,6 +31,32 @@ class EstudiantesController extends Controller
             return response()->json(['message' => 'Error en el registro'], 400);
         }
         $this->EstudianteClass->crear($datos);
+    }
+
+    public function dato(Estudiantes $id){
+        try {
+            return response()->json(['message' => $id], 200);
+        } catch (\Throwable $th) {
+            return response()->json(['message' => $id], 404);
+        }
+    }
+
+    public function editar(EstudiantesRequest $datos, Estudiantes $id){
+        try {
+            $this->EstudianteClass->editar($datos, $id);
+            return response()->json(['message' => 'Registro editado con exito'], 200);
+        } catch (\Throwable $th) {
+            return response()->json(['message' => 'Error!!'], 400);
+        }
+    }
+
+    public function eliminar(Estudiantes $id){
+        try {
+            $this->EstudianteClass->eliminar($id);
+            return response()->json(['message' => 'Eliminacion exitosa'], 200);
+        } catch (\Throwable $th) {
+            return response()->json(['message' => 'Error!!'], 404);
+        }
     }
 
 }

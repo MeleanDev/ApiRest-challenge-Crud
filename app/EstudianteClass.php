@@ -21,4 +21,12 @@ class EstudianteClass
         $this->dataBaseCLass->estudianteCrear($datos);
     }
 
+    public function editar($datos, $id){
+        $this->dataBaseCLass->estudianteEditar($datos, $id);
+    }
+
+    public function eliminar($id){
+        $this->dataBaseCLass->estudianteEliminar($id);
+    }
+
 }
