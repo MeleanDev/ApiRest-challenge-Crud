@@ -29,4 +29,13 @@ class EstudianteClass
         $this->dataBaseCLass->estudianteEliminar($id);
     }
 
+    public function resetTabla($datos){
+        $eliminado = false;
+        if ($datos == 'baja') {
+            $this->dataBaseCLass->estudianteReset(); 
+            $eliminado = true;
+        }
+        return $eliminado;
+    }
+
 }

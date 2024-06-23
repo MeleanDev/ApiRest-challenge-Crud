@@ -38,4 +38,9 @@ class DataBaseCLass
             $id->delete();
         }
 
+        // Truncate
+        public function estudianteReset(){
+            Estudiantes::truncate();
+        }
+
 }
