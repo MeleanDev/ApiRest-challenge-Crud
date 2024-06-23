@@ -33,13 +33,13 @@ class MateriaController extends Controller
         }
     }
 
-    // public function dato(Materia $id){
-    //     try {
-    //         return response()->json(['message' => $id], 200);
-    //     } catch (\Throwable $th) {
-    //         return response()->json(['message' => $id], 404);
-    //     }
-    // }
+    public function dato(Materia $id){
+        try {
+            return response()->json(['message' => $id], 200);
+        } catch (\Throwable $th) {
+            return response()->json(['message' => $id], 404);
+        }
+    }
 
     public function editar(MateriaRequest $datos, Materia $id){
         try {
