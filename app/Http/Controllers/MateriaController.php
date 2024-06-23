@@ -41,14 +41,14 @@ class MateriaController extends Controller
     //     }
     // }
 
-    // public function editar(MateriaRequest $datos, Materia $id){
-    //     try {
-    //         $this->materiaClass->editar($datos, $id);
-    //         return response()->json(['message' => 'Registro editado con exito'], 200);
-    //     } catch (\Throwable $th) {
-    //         return response()->json(['message' => 'Error!!'], 400);
-    //     }
-    // }
+    public function editar(MateriaRequest $datos, Materia $id){
+        try {
+            $this->materiaClass->editar($datos, $id);
+            return response()->json(['message' => 'Registro editado con exito'], 200);
+        } catch (\Throwable $th) {
+            return response()->json(['message' => 'Error!!'], 400);
+        }
+    }
 
     // public function eliminar(Materia $id){
     //     try {

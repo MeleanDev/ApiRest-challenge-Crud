@@ -58,14 +58,11 @@ class DataBaseCLass
             $estud->save();
         }
 
-        // // Editar
-        // public function materiaEditar($datos ,$id){
-        //     $id->nombre = $datos->nombre;
-        //     $id->apellido = $datos->apellido;
-        //     $id->cedula = $datos->cedula;
-        //     $id->fecha_nacimiento = $datos->fecha_nacimiento;
-        //     $id->save();
-        // }
+        // Editar
+        public function materiaEditar($datos ,$id){
+            $id->nombre = $datos->nombre;
+            $id->save();
+        }
 
         // // Eliminar
         // public function materiaEliminar($id){

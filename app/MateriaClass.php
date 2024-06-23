@@ -20,9 +20,9 @@ class MateriaClass
         $this->dataBaseCLass->materiaCrear($datos);
     }
 
-    // public function editar($datos, $id){
-    //     $this->dataBaseCLass->materiaEditar($datos, $id);
-    // }
+    public function editar($datos, $id){
+        $this->dataBaseCLass->materiaEditar($datos, $id);
+    }
 
     // public function eliminar($id){
     //     $this->dataBaseCLass->materiaEliminar($id);
