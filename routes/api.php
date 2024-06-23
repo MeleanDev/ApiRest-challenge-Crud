@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CalificacioneController;
 use App\Http\Controllers\EstudiantesController;
 use App\Http\Controllers\MateriaController;
 use Illuminate\Support\Facades\Route;
@@ -22,4 +23,14 @@ Route::controller(MateriaController::class)->group(function () {
     Route::put('Materias/{id}', 'editar');
     Route::delete('Materias/{id}', 'eliminar');
     Route::post('Materias/Resete', 'reset');
+});
+
+// calificacion
+Route::controller(CalificacioneController::class)->group(function () {
+    Route::get('Calificacion', 'lista');
+    Route::post('Calificacion', 'crear');
+    Route::get('Calificacion/{id}', 'dato');
+    Route::put('Calificacion/{id}', 'editar');
+    Route::delete('Calificacion/{id}', 'eliminar');
+    Route::post('Calificacion/Resete', 'reset');
 });

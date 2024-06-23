@@ -8,4 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Materia extends Model
 {
     use HasFactory;
+
+    /**
+     * The attributes that aren't mass assignable.
+     *
+     * @var array<string>
+     */
+    protected $guarded = [''];
+
+    public function materias()
+    {
+        return $this->belongsToMany(Estudiantes::class, 'nota', 'estudiantes_id', 'materia_id')->withPivot('calificaciones');
+    }
 }

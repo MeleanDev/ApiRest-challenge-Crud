@@ -16,5 +16,16 @@ class Calificacione extends Model
      */
     protected $guarded = ['*'];
 
-    
+    // Definir la clave primaria de la tabla pivote
+    protected $primaryKey = ['estudiantes_id', 'materia_id'];
+
+    public function estudiante()
+    {
+        return $this->belongsTo(Estudiantes::class);
+    }
+
+    public function materia()
+    {
+        return $this->belongsTo(Materia::class);
+    }
 }
