@@ -11,7 +11,7 @@ class EstudiantesRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,10 @@ class EstudiantesRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'nombre' => ['required','string', 'min:3', 'max:255'],
+            'apellido' => ['required','string', 'min:3', 'max:255'],
+            'cedula' => ['required','string', 'min:3', 'max:12'],
+            'fecha_nacimiento' => ['required'],
         ];
     }
 }
