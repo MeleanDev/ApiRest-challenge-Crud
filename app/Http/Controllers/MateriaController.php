@@ -2,64 +2,66 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\MateriaRequest;
+use App\MateriaClass;
 use App\Models\Materia;
 use Illuminate\Http\Request;
 
 class MateriaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+    private $materiaClass;
+
+    public function __construct(MateriaClass $materiaClass)
     {
-        //
+        $this->materiaClass = $materiaClass;
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+    public function lista(){
+        $datos = $this->materiaClass->lista();
+        if ($datos->isEmpty()) {
+            return response()->json(['message' => 'No se encuentran registros'], 200);
+        }
+        return response()->json(['message' => $datos], 200);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
+    // public function crear(MateriaRequest $datos){
+    //     try {
+    //         $this->materiaClass->crear($datos);
+    //         return response()->json(['message' => 'Registro exitoso'], 201);
+    //     } catch (\Throwable $th) {
+    //         return response()->json(['message' => 'Error en el registro'], 400);
+    //     }
+    // }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Materia $materia)
-    {
-        //
-    }
+    // public function dato(Materia $id){
+    //     try {
+    //         return response()->json(['message' => $id], 200);
+    //     } catch (\Throwable $th) {
+    //         return response()->json(['message' => $id], 404);
+    //     }
+    // }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Materia $materia)
-    {
-        //
-    }
+    // public function editar(MateriaRequest $datos, Materia $id){
+    //     try {
+    //         $this->materiaClass->editar($datos, $id);
+    //         return response()->json(['message' => 'Registro editado con exito'], 200);
+    //     } catch (\Throwable $th) {
+    //         return response()->json(['message' => 'Error!!'], 400);
+    //     }
+    // }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Materia $materia)
-    {
-        //
-    }
+    // public function eliminar(Materia $id){
+    //     try {
+    //         $this->materiaClass->eliminar($id);
+    //         return response()->json(['message' => 'Eliminacion exitosa'], 200);
+    //     } catch (\Throwable $th) {
+    //         return response()->json(['message' => 'Error!!'], 404);
+    //     }
+    // }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Materia $materia)
-    {
-        //
-    }
+    // public function reset(Request $dato){
+    //     $eliminacion = $this->materiaClass->resetTabla($dato->baja);
+    //     if ($eliminacion == true) return response()->json(['message' => 'Todos los registros eliminado'], 200);
+    //     return response()->json(['message' => 'Registros no eliminado'], 400);
+    // }
 }
