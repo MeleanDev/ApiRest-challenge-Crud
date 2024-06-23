@@ -24,14 +24,14 @@ class MateriaController extends Controller
         return response()->json(['message' => $datos], 200);
     }
 
-    // public function crear(MateriaRequest $datos){
-    //     try {
-    //         $this->materiaClass->crear($datos);
-    //         return response()->json(['message' => 'Registro exitoso'], 201);
-    //     } catch (\Throwable $th) {
-    //         return response()->json(['message' => 'Error en el registro'], 400);
-    //     }
-    // }
+    public function crear(MateriaRequest $datos){
+        try {
+            $this->materiaClass->crear($datos);
+            return response()->json(['message' => 'Registro exitoso'], 201);
+        } catch (\Throwable $th) {
+            return response()->json(['message' => 'Error en el registro'], 400);
+        }
+    }
 
     // public function dato(Materia $id){
     //     try {

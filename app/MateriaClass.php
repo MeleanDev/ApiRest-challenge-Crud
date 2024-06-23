@@ -16,22 +16,22 @@ class MateriaClass
         return $datos;
     }
 
-    // public function crear($datos){
-    //     $this->dataBaseCLass->estudianteCrear($datos);
-    // }
+    public function crear($datos){
+        $this->dataBaseCLass->materiaCrear($datos);
+    }
 
     // public function editar($datos, $id){
-    //     $this->dataBaseCLass->estudianteEditar($datos, $id);
+    //     $this->dataBaseCLass->materiaEditar($datos, $id);
     // }
 
     // public function eliminar($id){
-    //     $this->dataBaseCLass->estudianteEliminar($id);
+    //     $this->dataBaseCLass->materiaEliminar($id);
     // }
 
     // public function resetTabla($datos){
     //     $eliminado = false;
     //     if ($datos == 'baja') {
-    //         $this->dataBaseCLass->estudianteReset(); 
+    //         $this->dataBaseCLass->materiaReset(); 
     //         $eliminado = true;
     //     }
     //     return $eliminado;

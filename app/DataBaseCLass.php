@@ -52,17 +52,14 @@ class DataBaseCLass
         }
 
         // Crear
-        // public function estudianteCrear($datos){
-        //     $estud = new Estudiantes();
-        //     $estud->nombre = $datos->nombre;
-        //     $estud->apellido = $datos->apellido;
-        //     $estud->cedula = $datos->cedula;
-        //     $estud->fecha_nacimiento = $datos->fecha_nacimiento;
-        //     $estud->save();
-        // }
+        public function materiaCrear($datos){
+            $estud = new Materia();
+            $estud->nombre = $datos->nombre;
+            $estud->save();
+        }
 
         // // Editar
-        // public function estudianteEditar($datos ,$id){
+        // public function materiaEditar($datos ,$id){
         //     $id->nombre = $datos->nombre;
         //     $id->apellido = $datos->apellido;
         //     $id->cedula = $datos->cedula;
@@ -71,13 +68,13 @@ class DataBaseCLass
         // }
 
         // // Eliminar
-        // public function estudianteEliminar($id){
+        // public function materiaEliminar($id){
         //     $id->delete();
         // }
 
         // // Truncate
-        // public function estudianteReset(){
-        //     Estudiantes::truncate();
+        // public function materiaReset(){
+        //     Materia::truncate();
         // }
 
 
