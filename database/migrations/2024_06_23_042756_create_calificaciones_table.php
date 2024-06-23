@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('calificaciones', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('materia_id');
+            $table->unsignedBigInteger('estudiante_id');
+            $table->integer('nota');
             $table->timestamps();
         });
     }
