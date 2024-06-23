@@ -9,5 +9,5 @@ Route::controller(EstudiantesController::class)->group(function () {
     Route::get('Estudiantes/{id}', 'dato');
     Route::put('Estudiantes/{id}', 'editar');
     Route::delete('Estudiantes/{id}', 'eliminar');
-    Route::post('Estudiantes/Reset', 'reset');
+    Route::post('Estudiantes/Resete', 'reset');
 });
