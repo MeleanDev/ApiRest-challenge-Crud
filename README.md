@@ -24,12 +24,12 @@ put: dominio.com/api/Estudiantes/{id} // enviar el id de un registro los datos n
 delete: dominio.com/api/Estudiantes/id // envia el id para eliminar el registro</br></br>
 post: dominio.com/api/Estudiantes/Resete // envia el dato baja = baja para eliminar todos los registros</br></br>
 ## Materia:
-Get: dominio.com/api/Materia // Devuelve una lista completa de las materias</br></br>
-post: dominio.com/api/Materia // envia dato para agregar al registro : nombre</br></br>
-Get: dominio.com/api/Materia/{id} // envia el id de un registro para que devuelva el registro</br></br>
-put: dominio.com/api/Materia/{id} // enviar el id de un registro los datos nombre, para modificar el registro</br></br>
-delete: dominio.com/api/Materia/id // envia el id para eliminar el registro</br></br>
-post: dominio.com/api/Materia/Resete // envia el dato baja = baja para eliminar todos los registros</br></br>
+Get: dominio.com/api/Materias // Devuelve una lista completa de las materias</br></br>
+post: dominio.com/api/Materias // envia dato para agregar al registro : nombre</br></br>
+Get: dominio.com/api/Materias/{id} // envia el id de un registro para que devuelva el registro</br></br>
+put: dominio.com/api/Materias/{id} // enviar el id de un registro los datos nombre, para modificar el registro</br></br>
+delete: dominio.com/api/Materias/id // envia el id para eliminar el registro</br></br>
+post: dominio.com/api/Materias/Resete // envia el dato baja = baja para eliminar todos los registros</br></br>
 ## Calificaciones:
 Get: dominio.com/api/Calificaciones // Devuelve una lista completa de las calificaciones</br></br>
 post: dominio.com/api/Calificaciones // envia dato para agregar al registro : nota, estudiantes_id, materia_id</br></br>
