@@ -28,14 +28,14 @@ class MateriaClass
         $this->dataBaseCLass->materiaEliminar($id);
     }
 
-    // public function resetTabla($datos){
-    //     $eliminado = false;
-    //     if ($datos == 'baja') {
-    //         $this->dataBaseCLass->materiaReset(); 
-    //         $eliminado = true;
-    //     }
-    //     return $eliminado;
-    // }
+    public function resetTabla($datos){
+        $eliminado = false;
+        if ($datos == 'baja') {
+            $this->dataBaseCLass->materiaReset(); 
+            $eliminado = true;
+        }
+        return $eliminado;
+    }
 
     
 }

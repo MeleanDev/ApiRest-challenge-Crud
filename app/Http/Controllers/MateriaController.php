@@ -59,9 +59,9 @@ class MateriaController extends Controller
         }
     }
 
-    // public function reset(Request $dato){
-    //     $eliminacion = $this->materiaClass->resetTabla($dato->baja);
-    //     if ($eliminacion == true) return response()->json(['message' => 'Todos los registros eliminado'], 200);
-    //     return response()->json(['message' => 'Registros no eliminado'], 400);
-    // }
+    public function reset(Request $dato){
+        $eliminacion = $this->materiaClass->resetTabla($dato->baja);
+        if ($eliminacion == true) return response()->json(['message' => 'Todos los registros eliminado'], 200);
+        return response()->json(['message' => 'Registros no eliminado'], 400);
+    }
 }

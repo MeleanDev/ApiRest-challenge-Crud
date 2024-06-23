@@ -69,10 +69,10 @@ class DataBaseCLass
             $id->delete();
         }
 
-        // // Truncate
-        // public function materiaReset(){
-        //     Materia::truncate();
-        // }
+        // Truncate
+        public function materiaReset(){
+            Materia::truncate();
+        }
 
 
 }
