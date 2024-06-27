@@ -17,24 +17,32 @@ Información necesaria:
 ## Ejercico Completado!!</br></br>
 ### Rutas:</br>
 ## Estudiante:
-Get: dominio.com/api/Estudiantes // Devuelve una lista completa de los estudiantes</br></br>
-post: dominio.com/api/Estudiantes // envia dato para agregar al registro : nombre, apellido, cedula, fecha_nacimiento</br></br>
-Get: dominio.com/api/Estudiantes/{id} // envia el id de un registro para que devuelva el registro</br></br>
-put: dominio.com/api/Estudiantes/{id} // enviar el id de un registro los datos nombre, apellido, cedula, fecha_nacimiento, para modificar el registro</br></br>
-delete: dominio.com/api/Estudiantes/id // envia el id para eliminar el registro</br></br>
-post: dominio.com/api/Estudiantes/Resete // envia el dato baja = baja para eliminar todos los registros</br></br>
+| Datos a enviar                                                                                                    | Metodo        | Ruta                    |
+|:------------------------------------------------------------------------------------------------------------------|:-------------:|------------------------:|
+| Esta devuelve una lista de los estudiantes                                                                        | **GET**       | api/Estudiantes         |
+| envia dato para agregar al registro : nombre, apellido, cedula, fecha_nacimiento                                  | **POST**      | api/Estudiantes         |
+| envia el id de un registro para que devuelva el registro                                                          | **GET**       | api/Estudiantes/{id}    |
+| enviar el id de un registro los datos nombre, apellido, cedula, fecha_nacimiento, para modificar el registro      | **PUT**       | api/Estudiantes/{id}    |
+| envia el id para eliminar el registro                                                                             | **DELETE**    | api/Estudiantes/{id}    |
+| envia el dato (baja = baja) para eliminar todos los registros                                                     | **POST**      | api/Estudiantes/Resete  |
+
 ## Materia:
-Get: dominio.com/api/Materias // Devuelve una lista completa de las materias</br></br>
-post: dominio.com/api/Materias // envia dato para agregar al registro : nombre</br></br>
-Get: dominio.com/api/Materias/{id} // envia el id de un registro para que devuelva el registro</br></br>
-put: dominio.com/api/Materias/{id} // enviar el id de un registro los datos nombre, para modificar el registro</br></br>
-delete: dominio.com/api/Materias/id // envia el id para eliminar el registro</br></br>
-post: dominio.com/api/Materias/Resete // envia el dato baja = baja para eliminar todos los registros</br></br>
+| Datos a enviar                                                               | Metodo        | Ruta                 |
+|:-----------------------------------------------------------------------------|:-------------:|---------------------:|
+| Esta devuelve una lista de los materias                                      | **GET**       | api/Materias         |
+| envia dato para agregar al registro : nombre                                 | **POST**      | api/Materias         |
+| envia el id de un registro para que devuelva el registro                     | **GET**       | api/Materias/{id}    |
+| enviar el id de un registro los datos nombre para modificar el registro      | **PUT**       | api/Materias/{id}    |
+| envia el id para eliminar el registro                                        | **DELETE**    | api/Materias/{id}    |
+| envia el dato (baja = baja) para eliminar todos los registros                | **POST**      | api/Materias/Resete  |
+
 ## Calificaciones:
-Get: dominio.com/api/Calificaciones // Devuelve una lista completa de las calificaciones</br></br>
-post: dominio.com/api/Calificaciones // envia dato para agregar al registro : nota, estudiantes_id, materia_id</br></br>
-Get: dominio.com/api/Calificaciones/{id} // envia el id de un registro para que devuelva el registro</br></br>
-put: dominio.com/api/Calificaciones/{id} // enviar el id de un registro los datos nota, estudiantes_id, materia_id, para modificar el registro</br></br>
-delete: dominio.com/api/Calificaciones/id // envia el id para eliminar el registro</br></br>
-post: dominio.com/api/Calificaciones/Resete // envia el dato baja = baja para eliminar todos los registros</br></br>
+| Datos a enviar                                                                                                   | Metodo        | Ruta                       |
+|:-----------------------------------------------------------------------------------------------------------------|:-------------:|---------------------------:|
+| Esta devuelve una lista de los productos                                                                         | **GET**       | api/Calificaciones         |
+| envia dato para agregar al registro : nota, estudiantes_id, materia_id                                           | **POST**      | api/Calificaciones         |
+| envia el id de un registro para que devuelva el registro                                                         | **GET**       | api/Calificaciones/{id}    |
+| enviar el id de un registro los datos nota, estudiantes_id, materia_id, para modificar el registro               | **PUT**       | api/Calificaciones/{id}    |
+| envia el id para eliminar el registro                                                                            | **DELETE**    | api/Calificaciones/{id}    |
+| envia el dato (baja = baja) para eliminar todos los registros                                                    | **POST**      | api/Calificaciones/Resete  |
 
